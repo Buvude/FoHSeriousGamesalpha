@@ -802,7 +802,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 702704535}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -1446,7 +1458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd45fd0b654af24479d1b29c67f51e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProofReaderSentance: {fileID: 1275182065}
+  ProofReaderSentancePlaceHolder: {fileID: 1824406992}
+  proofReaderSentanceTrue: {fileID: 1275182065}
   q1Correct: Every time I walk along the beach, my dog runs up to me.
   q1Incorrect:
   - Ever time I walk along the beach, my dog runs up to me.
