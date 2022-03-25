@@ -8,6 +8,7 @@ public class GrammerHWScript : MonoBehaviour
     // Start is called before the first frame update
     public ScoreManager sM;
     //public Text ProofReaderSentancePlaceHolder,proofReaderSentanceTrue;
+    public Text questionNumber;
     public InputField iField;
     public string q1Correct = "Every time I walk along the beach, my dog runs up to me.";
     public string[] q1Incorrect = {"Ever time I walk along the beach, my dog runs up to me.", "Every time I walk along the birch, my dog runs up to me.","Every time I walk along the beach, my dog runs uo to me."};
@@ -26,7 +27,7 @@ public class GrammerHWScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        questionNumber.text = "Question Number "+proofReadingQuestionNumber.ToString()+":";
     }
    /* public void setStrings()
     {
@@ -61,6 +62,10 @@ public class GrammerHWScript : MonoBehaviour
             case 1:
                 iField.text = q1Incorrect.GetValue(int.Parse(randomIndex.ToString())).ToString();
                 break;
+            default:
+                iField.text = "Error, no question ready for this";
+                break;
         }
     }
+
 }
