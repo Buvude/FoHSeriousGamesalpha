@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GrammerHWScript : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GrammerHWScript : MonoBehaviour
     public ScoreManager sM;
     //public Text ProofReaderSentancePlaceHolder,proofReaderSentanceTrue;
     public Text questionNumber;
-    public InputField iField;
+    public TMP_InputField iField;
     public string q1Correct = "Every time I walk along the beach, my dog runs up to me.";
     public string[] q1Incorrect = {"Ever time I walk along the beach, my dog runs up to me.", "Every time I walk along the birch, my dog runs up to me.","Every time I walk along the beach, my dog runs uo to me."};
     public int randomIndex, proofReadingQuestionNumber;
