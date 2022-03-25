@@ -734,7 +734,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Debug your code
+  m_Text: Coding
 --- !u!222 &340978962
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1035,7 +1035,7 @@ GameObject:
   m_Component:
   - component: {fileID: 473846442}
   m_Layer: 5
-  m_Name: Debug Code
+  m_Name: Coding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2009,7 +2009,7 @@ GameObject:
   - component: {fileID: 751193320}
   - component: {fileID: 751193319}
   m_Layer: 5
-  m_Name: ProgrammingDebugHWBtn
+  m_Name: ProgrammingHWBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
