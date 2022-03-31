@@ -15,6 +15,7 @@ public class CodingHWScript : MonoBehaviour
     public int index=1;
     public TextMeshProUGUI output;
     private string outputstring;
+    public int puzzleNumber = 1;
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +24,7 @@ public class CodingHWScript : MonoBehaviour
 
     public void upButtonPress()
     {
-        if (index < 10)
+        if (index < 10&&puzzleNumber==1)
         {
             commands.SetValue("foward, ", index );
             index++;
@@ -34,6 +35,10 @@ public class CodingHWScript : MonoBehaviour
             }
             output.text = outputstring;
         }
+        else if (puzzleNumber > 1)
+        {
+            output.text = "No further puzzles in this version";
+        }
         else
         {
             output.text = "Error, you have already used up all 10 moves for this puzzle. use the undo to remove previous moves";
@@ -43,7 +48,7 @@ public class CodingHWScript : MonoBehaviour
 
     public void leftButtonPress()
     {
-        if (index < 10)
+        if (index < 10 && puzzleNumber == 1)
         {
             commands.SetValue("turn left, ", index);
             index++;
@@ -54,6 +59,10 @@ public class CodingHWScript : MonoBehaviour
             }
             output.text = outputstring;
         }
+        else if (puzzleNumber > 1)
+        {
+            output.text = "No further puzzles in this version";
+        }
         else
         {
             output.text = "Error, you have already used up all 10 moves for this puzzle. use the undo to remove previous moves";
@@ -63,7 +72,7 @@ public class CodingHWScript : MonoBehaviour
 
     public void rightButtonPress()
     {
-        if (index < 10)
+        if (index < 10 && puzzleNumber == 1)
         {
             commands.SetValue("turn right, ", index);
             index++;
@@ -74,6 +83,10 @@ public class CodingHWScript : MonoBehaviour
             }
             output.text = outputstring;
         }
+        else if (puzzleNumber > 1)
+        {
+            output.text = "No further puzzles in this version";
+        }
         else
         {
             output.text = "Error, you have already used up all 10 moves for this puzzle. use the undo to remove previous moves";
@@ -83,14 +96,52 @@ public class CodingHWScript : MonoBehaviour
 
     public void undoButtonPress()
     {
-        index--;
-        commands.SetValue(" ", index);
-        outputstring = "";
-        foreach (string s in commands)
+        if (index >= 1&&puzzleNumber==1)
         {
-            outputstring += s;
+            index--;
+            commands.SetValue(" ", index);
+            outputstring = "";
+            foreach (string s in commands)
+            {
+                outputstring += s;
+            }
+            output.text = outputstring;
         }
-        output.text = outputstring;
+        else if (puzzleNumber > 1)
+        {
+            output.text = "No further puzzels in this version";
+        }
+        else
+        {
+            output.text = "you cannot undo what has already been undone (you have undone all commands)";
+        }
+        
+
+    }
+    
+    public void submit()
+    {
+        if (puzzleNumber == 1)
+        {
+            outputstring = "";
+            foreach (string s in commands)
+            {
+                outputstring += s;
+            }
+            if (outputstring == "foward, turn right, foward, foward, foward, turn right, foward, foward, turn left, foward, ")
+            {
+                output.text = "You got the coding question correct";
+            }
+            else
+            {
+                output.text = "You got the coding question incorrect";
+            }
+            puzzleNumber++;
+        }
+        else if (puzzleNumber > 1)
+        {
+            output.text = "No further puzzles in this version";
+        }
     }
 
 }
