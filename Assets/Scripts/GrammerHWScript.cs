@@ -15,6 +15,7 @@ public class GrammerHWScript : MonoBehaviour
     public string[] q1Incorrect = {"Ever time I walk along the beach, my dog runs up to me.", "Every time I walk along the birch, my dog runs up to me.","Every time I walk along the beach, my dog runs uo to me."};
     public int randomIndex, proofReadingQuestionNumber;
     public Button submitBtn, resetBtn, instructionsBtn;
+    public DistractionCenter DCMain;
     void Start()
     {
         proofReadingQuestionNumber = 1;

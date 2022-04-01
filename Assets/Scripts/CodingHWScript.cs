@@ -11,6 +11,7 @@ public class CodingHWScript : MonoBehaviour
     {
         commands = new string[10];   
     }
+    public DistractionCenter DCMain;
     public string[] commands;
     public int index=1;
     public TextMeshProUGUI output;
