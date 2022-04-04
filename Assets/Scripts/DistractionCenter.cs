@@ -6,6 +6,7 @@ public class DistractionCenter : MonoBehaviour
 {
     public AudioSource ding;
     public AudioClip SynthroidShort, SynthroidFull, dingSoud;
+    public GameObject mentalChoices, phisichalChoices, computerChoices;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,14 @@ public class DistractionCenter : MonoBehaviour
         ding.clip=SynthroidShort;
         ding.loop=true;
         ding.Play();
+        mentalChoices.SetActive(true);
 
+    }
+    public void mentatlDistractitonsFullSong()
+    {
+        ding.clip = SynthroidFull;
+        ding.loop = false;
+        ding.Play();
+        mentalChoices.SetActive(false);
     }
 }
