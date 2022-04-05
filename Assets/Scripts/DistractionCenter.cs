@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class DistractionCenter : MonoBehaviour
 {
     public AudioSource ding;
     public AudioClip SynthroidShort, SynthroidFull, dingSoud;
-    public GameObject mentalChoices, phisichalChoices, computerChoices;
+    public TextMeshProUGUI posterText;
+    //public GameObject mentalChoices, phisichalChoices, computerChoices;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +32,14 @@ public class DistractionCenter : MonoBehaviour
         ding.clip=SynthroidShort;
         ding.loop=true;
         ding.Play();
-        mentalChoices.SetActive(true);
+        //mentalChoices.SetActive(true);
 
     }
-    public void mentatlDistractitonsFullSong()
+/*    public void mentatlDistractitonsFullSong()
     {
         ding.clip = SynthroidFull;
         ding.loop = false;
         ding.Play();
-        mentalChoices.SetActive(false);
+        //mentalChoices.SetActive(false);
     }
-}
+*/}
