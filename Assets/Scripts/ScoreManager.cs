@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
     public int correct, incorrect,questionNumber;
     public const int TOTAL=15;
-    public bool[] incorrectAnswers=new bool[15];
-    public GrammerHWScript gHWS;
-    public GameObject proofReading, Debugging, HistoryReader;
+    public bool[] accuracyProofRead=new bool[5], accuracyCoding=new bool[5], accuracyReadingComp=new bool[5]; //true is right, false is wrong
+    public int assignmentsAnswered = 0;
+    public Slider HWPercentage, StressMeter;
+   /* public GrammerHWScript gHWS;*/
+    public GameObject proofReading, Debugging, HistoryReader;//*/
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        HWPercentage.value = assignmentsAnswered;
     }
     public void onProofReadSelect()
     {

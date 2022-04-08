@@ -42,14 +42,14 @@ public class GrammerHWScript : MonoBehaviour
         {
             if (iField.text == q1Correct)
             {
-                sM.incorrectAnswers.SetValue(false, sM.questionNumber);
+                sM.accuracyProofRead.SetValue(false, sM.questionNumber);
                 sM.questionNumber++;
                 sM.correct++;
                 proofReadingQuestionNumber++;
             }
             else
             {
-                sM.incorrectAnswers.SetValue(true, sM.questionNumber);
+                sM.accuracyProofRead.SetValue(true, sM.questionNumber);
                 sM.questionNumber++;
                 sM.incorrect++;
                 proofReadingQuestionNumber++;
