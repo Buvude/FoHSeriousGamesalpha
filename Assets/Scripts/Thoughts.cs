@@ -25,8 +25,29 @@ public class Thoughts : MonoBehaviour
     {
         if (firstTimeProofRead)
         {
+            StopCoroutine("HWFade");
             thoughtsTXT.text = "This is my proofreading, I need to find all the spelling mistakes/typos and fix them before submitting the sentence.";
             StartCoroutine("HWFade", 5f);
+        }
+    }
+
+    public void FirstTimeHistoryReadng()
+    {
+        if (firstTimeReadComp)
+        {
+            StopCoroutine("HWFade");
+            thoughtsTXT.text = "This is my history homework... I remember that one of these three paragraphs has the answer... if I can select the right one I can answer it fairly easily then";
+            StartCoroutine("HWFade", 10f);
+        }
+    }
+
+    public void FirstTimeCoding()
+    {
+        if (firstTimeReadComp)
+        {
+            StopCoroutine("HWFade");
+            thoughtsTXT.text = "I just need to guide the little guy at the start to the end, taking the direction he is facing into account. I need to tell him all the directions then hit submit";
+            StartCoroutine("HWFade", 10f);
         }
     }
 
