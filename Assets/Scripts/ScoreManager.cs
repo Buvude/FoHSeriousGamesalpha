@@ -41,4 +41,21 @@ public class ScoreManager : MonoBehaviour
         Debugging.SetActive(false);
         HistoryReader.SetActive(true);
     }
+    public void historyfinished(int questionNumber, bool correct)
+    {
+        assignmentsAnswered++;
+        accuracyReadingComp[questionNumber - 1] = correct;
+    }
+
+    public void codingFinished(int questionNumber, bool correct)
+    {
+        assignmentsAnswered++;
+        accuracyCoding[questionNumber - 1] = correct;
+    }
+
+    public void ProofReadingFinished(int questionNumber, bool correct)
+    {
+        assignmentsAnswered++;
+        accuracyReadingComp[questionNumber - 1] = correct;
+    }
 }
