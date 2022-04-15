@@ -183,7 +183,7 @@ public class HistoryHWScript : MonoBehaviour
                     answerB.text = "Dave";
                     answerC.text = "Wimbledon";
                     answerD.text = "Stabby";
-                    textBookParagraphs.text = "";
+                    textBookParagraphs.text = "Ah… I don't remember this one. Or where to find it in my book.";
                     paragraphSelectors.SetActive(false);
                     DCMain.TeacherEmail(q3Correct);
                     break;

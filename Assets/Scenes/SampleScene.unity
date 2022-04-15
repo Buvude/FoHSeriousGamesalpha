@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &25758062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5637,6 +5637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 853622548}
   - component: {fileID: 853622547}
+  - component: {fileID: 853622546}
   m_Layer: 0
   m_Name: DistractionCenter
   m_TagString: Untagged
@@ -5644,6 +5645,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &853622546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853622545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd3236d9d8c4104089993dd55361491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &853622547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5662,15 +5675,15 @@ MonoBehaviour:
   MentalDistraction: {fileID: 1114184934}
   PhysichalDistraction: {fileID: 888489267}
   ComputerDistraction: {fileID: 1596480991}
-  SynthroidShort: {fileID: 8300000, guid: c1bd26f2cd3c05c4fbe111af335f8ff2, type: 3}
-  SynthroidFull: {fileID: 8300000, guid: 4e0e2a704f38f5f45906cbd5a1bb72fb, type: 3}
+  SynthroidShort: {fileID: 8300000, guid: 32be6840280aa7e448f6b207bb682738, type: 3}
+  SynthroidFull: {fileID: 8300000, guid: 3adc2760175d9e542bdebe9eb36edd99, type: 3}
   dingSoud: {fileID: 8300000, guid: 902f6565a8b822b45b838c6a1c6d6ac7, type: 3}
-  posterText: {fileID: 0}
   notificationText: {fileID: 62734598}
   notifications: []
   notificationsQueued: 0
   notificationsRead: 0
   totalNotificationsSpawned: 0
+  notifList: {fileID: 853622546}
 --- !u!4 &853622548
 Transform:
   m_ObjectHideFlags: 0
@@ -7594,8 +7607,8 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassEffects: 1
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -11447,7 +11460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ignore Notification
+  m_text: Dismiss Notification
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
