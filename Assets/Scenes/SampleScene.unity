@@ -272,6 +272,7 @@ MonoBehaviour:
   historySelectionBtn: {fileID: 1773913036}
   sM: {fileID: 282172815}
   q3Correct: 0
+  thou: {fileID: 282172816}
 --- !u!1 &27637085
 GameObject:
   m_ObjectHideFlags: 0
@@ -4300,7 +4301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &473846442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4341,6 +4342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8c7b1674b484f9429046770a7ca0c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thou: {fileID: 282172816}
   DCMain: {fileID: 853622547}
   commands: []
   index: 0
@@ -6516,6 +6518,7 @@ MonoBehaviour:
   sM: {fileID: 282172815}
   questionNumber: {fileID: 1464518765}
   iField: {fileID: 572354451}
+  thou: {fileID: 282172816}
   q1Correct: Every time I walk along the beach, my dog runs up to me.
   q2Correct: I wandered into the kitchen, keeping myself upright with the last of
     my strength.
@@ -6828,6 +6831,18 @@ MonoBehaviour:
       - m_Target: {fileID: 282172815}
         m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
         m_MethodName: onDebugCodeSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 282172816}
+        m_TargetAssemblyTypeName: Thoughts, Assembly-CSharp
+        m_MethodName: FirstTimeCoding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

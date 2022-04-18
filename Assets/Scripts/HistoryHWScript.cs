@@ -15,6 +15,7 @@ public class HistoryHWScript : MonoBehaviour
     public GameObject paragraphSelectors, historySelectionBtn;
     public ScoreManager sM;
     public int q3Correct;
+    public Thoughts thou;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +66,11 @@ public class HistoryHWScript : MonoBehaviour
             sM.historyfinished(4, false);
             nextHistoryQuestion();
         }
+        else if (questionNumber == 5)
+        {
+            sM.historyfinished(5, false);
+            nextHistoryQuestion();
+        }
     }
     public void AnswerBPressed()
     {
@@ -98,6 +104,11 @@ public class HistoryHWScript : MonoBehaviour
             sM.historyfinished(4, true);
             nextHistoryQuestion();
         }
+        else if (questionNumber == 5)
+        {
+            sM.historyfinished(5, false);
+            nextHistoryQuestion();
+        }
     }
     public void AnswerCPressed()
     {
@@ -128,6 +139,11 @@ public class HistoryHWScript : MonoBehaviour
         else if (questionNumber == 4)
         {
             sM.historyfinished(4, false);
+            nextHistoryQuestion();
+        }
+        else if (questionNumber == 5)
+        {
+            sM.historyfinished(5, false);
             nextHistoryQuestion();
         }
     }
@@ -163,6 +179,11 @@ public class HistoryHWScript : MonoBehaviour
             sM.historyfinished(4, false);
             nextHistoryQuestion();
         }
+        else if (questionNumber == 5)
+        {
+            sM.historyfinished(5, true);
+            nextHistoryQuestion();
+        }
     }
 
     public void paragraph1btnPressed()
@@ -187,6 +208,7 @@ public class HistoryHWScript : MonoBehaviour
         {
             case 2:
                 {
+                    thou.firstTimeReadComp = false;
                     question.text = "Question 2: How many animals (not including humans) got medals of honour in the war of 2476?";
                     answerA.text = "6";
                     answerB.text = "3";
@@ -222,14 +244,17 @@ public class HistoryHWScript : MonoBehaviour
                     q1p1 = "The River Llên-ladrad first appeared on cartographer Llywellyn Gittins-Prosser’s comprehensive map of the French countryside. This map was only discovered after Llywellyn’s death, and explorers scrambled to find the previously-undiscovered river. Many failed or perished in their pursuit, due to the river’s location being nigh-inaccessible, running through a small canyon surrounded by treacherous mountains. Llywellyn’s wife, who had been unaware for two years of the uproar regarding the map, eventually clarified that her spouse had fabricated the existence of the river as a legal defense against having their map copied.";
                     break;
                 }
-            /*case 5:
+            case 5:
                 {
                     paragraphSelectors.SetActive(false);
                     question.text = "Question 5: What was the worst-received game ever made by Serious Games LLC?";
                     textBookParagraphs.text = "Serious Games, LLC was a publisher known for its educational and skill-building games, many of which are created to raise awareness of social issues. Many of their games received critical acclaim and are held as classics today, such as Jacob’s Parents, a visual novel about growing up in an abusive household based on the author’s own experiences; The Right Path, a simulation game about leading an ethics committee that encourages players to confront hard moral questions; and Bradley’s Burger Farm, an illuminating and well-researched time-management game that teaches players about the meat industry in a manner so nuanced that it was publicly decried by PETA, a factor that contributed to its popularity in the first place. However, the company has had its fair share of backlash and controversy as well.Games like Grief Simulator and Mental Killness were criticized heavily for their haphazard portrayal of dark subjects, the company’s relative obscurity at the time of their release";
-
+                    answerA.text = "Jacob's Parents";
+                    answerB.text = "Grief Simulator";
+                    answerC.text = "Mental Killness";
+                    answerD.text = "Mathketball Superstars";
                     break;
-                }*/
+                }
             default:
                 question.text = "There are no further questions avaliable";
                 historySelectionBtn.SetActive(false);

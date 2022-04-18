@@ -43,10 +43,10 @@ public class Thoughts : MonoBehaviour
 
     public void FirstTimeCoding()
     {
-        if (firstTimeReadComp)
+        if (firstkTimeCode)
         {
             StopCoroutine("HWFade");
-            thoughtsTXT.text = "I just need to guide the little guy at the start to the end, taking the direction he is facing into account. I need to tell him all the directions then hit submit";
+            thoughtsTXT.text = "Programming is easy. I just need to tell the bot what to do, and make sure I do so in the right order while keeping it’s orientation in mind……";
             StartCoroutine("HWFade", 10f);
         }
     }

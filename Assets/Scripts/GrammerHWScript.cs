@@ -11,12 +11,13 @@ public class GrammerHWScript : MonoBehaviour
     //public Text ProofReaderSentancePlaceHolder,proofReaderSentanceTrue;
     public Text questionNumber;
     public TMP_InputField iField;
+    public Thoughts thou;
     public string q1Correct = "Every time I walk along the beach, my dog runs up to me.",
                   q2Correct = "I wandered into the kitchen, keeping myself upright with the last of my strength.",
                   q3Correct = "None of my closest friends know my secret recipe.",
                   q4Correct = "The only thing Richard wants is to be left alone, eating lasagna and reading graphic novels.",
                   q5Correct = "A pretty young woman strolls into the castle garden at twilight, watching the birds.";
-    public string[] q1Incorrect = { "Ever time I walk along the beach, my dog runs up to me.", "Every time I walk along the birch, my dog runs up to me.", "Every time I walk along the beach, my dog runs uo to me." },
+    public string[] q1Incorrect = { "Ever time I walk along the beach, my dog runs up to me.", "Every time I walk along the bearch, my dog runs up to me.", "Every time I walk along the beach, my dog runs uo to me." },
                     q2Incorrect = { "I wandered into the kitchen, keeping myself upright with the last of my strenght.", "I wandred into the kithen, keeping myself upright with the last of my strength.", "I wondered into the kitchen, kepping myself upright with the last of my strenth." },
                     q3Incorrect = { "None of my closest friends know my secret recipie.", "None of my closets freinds know my secret recipe.", "Nonw of my closest friends known my secret recippe." },
                     q4Incorrect = { "The only thing Richard wants is to be left alone, eating lasana and reading graphic novels.", "The only thing Richard wants is to be left alone, eating lasagnia and reading graphtic novels.", "The only thing Richard wants is too be left alone, eating lasanga and reading graphic novells." },
@@ -29,7 +30,7 @@ public class GrammerHWScript : MonoBehaviour
     void Start()
     {
         proofReadingQuestionNumber = 1;
-        randomIndex = Random.Range(0, 2);
+        randomIndex = Random.Range(0, 3);
         //ProofReaderSentancePlaceHolder.text = "Hello, this is a test";
         iField.text = q1Incorrect.GetValue(int.Parse(randomIndex.ToString())).ToString();
         //Debug.Log("Text is saying: " + ProofReaderSentancePlaceHolder.text.ToString());
@@ -160,25 +161,26 @@ public class GrammerHWScript : MonoBehaviour
         {
             case 2:
                 {
-                    randomIndex = Random.Range(0, 2);
+                    randomIndex = Random.Range(0, 3);
                     iField.text = q2Incorrect.GetValue(int.Parse(randomIndex.ToString())).ToString();
+                    thou.firstTimeProofRead = false;
                     break;
                 }
             case 3:
                 {
-                    randomIndex = Random.Range(0, 2);
+                    randomIndex = Random.Range(0, 3);
                     iField.text = q3Incorrect.GetValue(int.Parse(randomIndex.ToString())).ToString();
                     break;
                 }
             case 4:
                 {
-                    randomIndex = Random.Range(0, 2);
+                    randomIndex = Random.Range(0, 3);
                     iField.text = q4Incorrect.GetValue(int.Parse(randomIndex.ToString())).ToString();
                     break;
                 }
             case 5:
                 {
-                    randomIndex = Random.Range(0, 2);
+                    randomIndex = Random.Range(0, 3);
                     iField.text = q5Incorrect.GetValue(int.Parse(randomIndex.ToString())).ToString();
                     break;
                 }

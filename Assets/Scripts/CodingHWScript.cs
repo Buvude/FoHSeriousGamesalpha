@@ -11,6 +11,7 @@ public class CodingHWScript : MonoBehaviour
     {
         commands = new string[10];   
     }
+    public Thoughts thou;
     public DistractionCenter DCMain;
     public string[] commands;
     public int index=1;
@@ -133,7 +134,6 @@ public class CodingHWScript : MonoBehaviour
                     {
                         outputstring += s;
                     }
-                    puzzleNumber++;
                     if (outputstring == "F, R, F, F, F, R, F, F, L, F, ")
                     {
                         SM.codingFinished(1, true);
@@ -143,8 +143,10 @@ public class CodingHWScript : MonoBehaviour
                         SM.codingFinished(1, false);
                     }
                     puzzleNumber++;
+                    thou.firstkTimeCode = false;
                     NextPuzzle();
                     break;
+                    
                 }
             case 2:
                 {
@@ -153,7 +155,6 @@ public class CodingHWScript : MonoBehaviour
                     {
                         outputstring += s;
                     }
-                    puzzleNumber++;
                     if (outputstring == "F, F, L, F, F, R, F, R, F, F, ")
                     {
                         SM.codingFinished(2, true);
@@ -173,7 +174,6 @@ public class CodingHWScript : MonoBehaviour
                     {
                         outputstring += s;
                     }
-                    puzzleNumber++;
                     if (outputstring == "F, L, F, L, F, F, L, F, R, F, ")
                     {
                         SM.codingFinished(3, true);
@@ -193,7 +193,6 @@ public class CodingHWScript : MonoBehaviour
                     {
                         outputstring += s;
                     }
-                    puzzleNumber++;
                     if (outputstring == "F, F, R, F, F, L, F, F, L, F, ")
                     {
                         SM.codingFinished(4, true);
@@ -213,7 +212,6 @@ public class CodingHWScript : MonoBehaviour
                     {
                         outputstring += s;
                     }
-                    puzzleNumber++;
                     if (outputstring == "R, F, F, L, F, F, L, F, F, F, ")
                     {
                         SM.codingFinished(5, true);
@@ -227,6 +225,9 @@ public class CodingHWScript : MonoBehaviour
                     break;
                 }
             default:
+                selectionbtn.SetActive(false);
+                puzzle5.SetActive(false);
+                output.text = "You have finished your coding homework!";
                 break;
         }
     }
