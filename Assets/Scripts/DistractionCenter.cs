@@ -21,11 +21,11 @@ public class DistractionCenter : MonoBehaviour
         //MentalDistractionSpawn();
         notifications = new string[20];
         notifList.setNotifications(notifications);
-        for (int i = 0; i < 40; i++)
+        /*for (int i = 0; i < 40; i++)
         {
             spawnComputerDistraction();
         }
-        TeacherEmail(2);
+        TeacherEmail(2);*/
         StartCoroutine("ComputerDistractionTime");
         StartCoroutine("MentalDistractionTime");
     }
@@ -80,7 +80,7 @@ public class DistractionCenter : MonoBehaviour
 
     public void MentalDistractionSpawn()
     {
-        MentalDistraction.volume = 1f;
+        MentalDistraction.volume = .5f;
         MentalDistraction.clip=SynthroidShort;
         MentalDistraction.loop=false;
         MentalDistraction.Play();
@@ -91,9 +91,10 @@ public class DistractionCenter : MonoBehaviour
     }
     public void mentatlDistractitonSynthroidFullSong()
     {
-        MentalDistraction.volume = .1f;
+        MentalDistraction.volume = 1f;
         mentalDistractionHappening = false;
         MentalDistraction.clip = SynthroidFull;
+        MentalDistraction.pitch = 1;
         MentalDistraction.loop = false;
         MentalDistraction.Play();
         //mentalChoices.SetActive(false);
@@ -157,6 +158,9 @@ public class DistractionCenter : MonoBehaviour
                 break;
         }
         spawnComputerDistraction();
+        spawnComputerDistraction();
+        spawnComputerDistraction();
+
         if (notificationsRead < 19)
         {
             notifications[notificationsRead + 1] = "From: Professor Professorson\n Hello students!\nThis is just a reminder that in-class tomorrow we will be discussing the rise and fall of " + var + " \"Cincinnati Scoundrel\" Marks! Make sure you're ready to have a lively discussion.";

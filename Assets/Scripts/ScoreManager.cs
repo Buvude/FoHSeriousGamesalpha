@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int correct, incorrect,questionNumber;
+    public int correct, incorrect/*,questionNumber*/;
     public const int TOTAL=15;
     public bool[] accuracyProofRead=new bool[5], accuracyCoding=new bool[5], accuracyReadingComp=new bool[5]; //true is right, false is wrong
     public int assignmentsAnswered = 0;
@@ -41,21 +41,45 @@ public class ScoreManager : MonoBehaviour
         Debugging.SetActive(false);
         HistoryReader.SetActive(true);
     }
-    public void historyfinished(int questionNumber, bool correct)
+    public void historyfinished(int questionNumber, bool accurate)
     {
         assignmentsAnswered++;
-        accuracyReadingComp[questionNumber - 1] = correct;
+        accuracyReadingComp[questionNumber - 1] = accurate;
+        if (accurate)
+        {
+            correct++;
+        }
+        else
+        {
+            incorrect++;
+        }
     }
 
-    public void codingFinished(int questionNumber, bool correct)
+    public void codingFinished(int questionNumber, bool accurate)
     {
         assignmentsAnswered++;
-        accuracyCoding[questionNumber - 1] = correct;
+        accuracyCoding[questionNumber - 1] = accurate;
+        if (accurate)
+        {
+            correct++;
+        }
+        else
+        {
+            incorrect++;
+        }
     }
 
-    public void ProofReadingFinished(int questionNumber, bool correct)
+    public void ProofReadingFinished(int questionNumber, bool accurate)
     {
         assignmentsAnswered++;
-        accuracyReadingComp[questionNumber - 1] = correct;
+        accuracyReadingComp[questionNumber - 1] = accurate;
+        if (accurate)
+        {
+            correct++;
+        }
+        else
+        {
+            incorrect++;
+        }
     }
 }

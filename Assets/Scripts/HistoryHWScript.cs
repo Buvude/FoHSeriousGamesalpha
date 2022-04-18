@@ -60,6 +60,11 @@ public class HistoryHWScript : MonoBehaviour
                 nextHistoryQuestion();
             }
         }
+        else if (questionNumber == 4)
+        {
+            sM.historyfinished(4, false);
+            nextHistoryQuestion();
+        }
     }
     public void AnswerBPressed()
     {
@@ -88,6 +93,11 @@ public class HistoryHWScript : MonoBehaviour
                 nextHistoryQuestion();
             }
         }
+        else if (questionNumber == 4)
+        {
+            sM.historyfinished(4, true);
+            nextHistoryQuestion();
+        }
     }
     public void AnswerCPressed()
     {
@@ -114,6 +124,11 @@ public class HistoryHWScript : MonoBehaviour
                 sM.historyfinished(3, false);
                 nextHistoryQuestion();
             }
+        }
+        else if (questionNumber == 4)
+        {
+            sM.historyfinished(4, false);
+            nextHistoryQuestion();
         }
     }
     public void AnswerDPressed()
@@ -142,6 +157,11 @@ public class HistoryHWScript : MonoBehaviour
                 sM.historyfinished(3, false);
                 nextHistoryQuestion();
             }
+        }
+        else if (questionNumber == 4)
+        {
+            sM.historyfinished(4, false);
+            nextHistoryQuestion();
         }
     }
 
@@ -178,7 +198,7 @@ public class HistoryHWScript : MonoBehaviour
                 }
             case 3:
                 {
-                    question.text = "Question 3: What was the Cincinnati Scoundrel’s first name?"+q3Correct;
+                    question.text = "Question 3: What was the Cincinnati Scoundrel’s first name?" + q3Correct;
                     answerA.text = " Bubbles";
                     answerB.text = "Dave";
                     answerC.text = "Wimbledon";
@@ -188,6 +208,28 @@ public class HistoryHWScript : MonoBehaviour
                     DCMain.TeacherEmail(q3Correct);
                     break;
                 }
+            case 4:
+                {
+                    paragraphSelectors.SetActive(true);
+                    question.text = "Question 4: Which river used to run through Chevalhorse Canyon?";
+                    answerA.text = "Lake Emu";
+                    answerB.text = "Wetwater";
+                    answerC.text = "Llên-ladrad";
+                    answerD.text = "none of the above";
+                    textBookParagraphs.text = "";
+                    q1p3 = "Wetwater Canyon was the name of a large rock formation discovered in 1872.It was named for the lake that ran through it, which in turn was named by a figure historians call “General Scribbles” due to the handwriting in his diaries which do not mention his actual name. Scribbles’ diaries explain that he named the river “Wetwater” as an insulting gesture toward his political rival Donovan, with whom he was in a years-long feud over whether or not water was wet. If Scribbles’ later writings are to be believed, Donovan dried up the lake himself leaving only a few scattered puddles of mud, in an attempt to demonstrate how water, when not surrounded by sufficiently more water, could in fact be rendered dry. However, some historians believe that Scribbles dried up the lake himself to prove that a dry lake would have no water at all, blaming Donovan for the deed instead when it proved unpopular.The canyon was rediscovered a century later by colonizers who had no knowledge of its history, and it was they who gave it the name we know it by today.The new name, it seems, came from a similar debate about horses.";
+                    q1p2 = "Lake Emu is a large body of water in Australia that has been inaccessible to humans since the Great Emu War of 1932. Though it runs through several beautiful landmarks, humanity has given up on reclaiming the territory ever since emus learned how to operate automatic rifles. Evidence uncovered by fearless historians and human-avian diplomats suggests that the valley surrounding the North end of Lake Emu used to be overrun with feral horses, but they all mysteriously disappeared long before humans ever lived there.";
+                    q1p1 = "The River Llên-ladrad first appeared on cartographer Llywellyn Gittins-Prosser’s comprehensive map of the French countryside. This map was only discovered after Llywellyn’s death, and explorers scrambled to find the previously-undiscovered river. Many failed or perished in their pursuit, due to the river’s location being nigh-inaccessible, running through a small canyon surrounded by treacherous mountains. Llywellyn’s wife, who had been unaware for two years of the uproar regarding the map, eventually clarified that her spouse had fabricated the existence of the river as a legal defense against having their map copied.";
+                    break;
+                }
+            /*case 5:
+                {
+                    paragraphSelectors.SetActive(false);
+                    question.text = "Question 5: What was the worst-received game ever made by Serious Games LLC?";
+                    textBookParagraphs.text = "Serious Games, LLC was a publisher known for its educational and skill-building games, many of which are created to raise awareness of social issues. Many of their games received critical acclaim and are held as classics today, such as Jacob’s Parents, a visual novel about growing up in an abusive household based on the author’s own experiences; The Right Path, a simulation game about leading an ethics committee that encourages players to confront hard moral questions; and Bradley’s Burger Farm, an illuminating and well-researched time-management game that teaches players about the meat industry in a manner so nuanced that it was publicly decried by PETA, a factor that contributed to its popularity in the first place. However, the company has had its fair share of backlash and controversy as well.Games like Grief Simulator and Mental Killness were criticized heavily for their haphazard portrayal of dark subjects, the company’s relative obscurity at the time of their release";
+
+                    break;
+                }*/
             default:
                 question.text = "There are no further questions avaliable";
                 historySelectionBtn.SetActive(false);
