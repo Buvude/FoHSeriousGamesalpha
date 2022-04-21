@@ -53,6 +53,7 @@ public class HistoryHWScript : MonoBehaviour
             if (q3Correct == 1)
             {
                 sM.historyfinished(3, true);
+                sM.copingSkills[2] = true;
                 nextHistoryQuestion();
             }
             else
@@ -91,6 +92,7 @@ public class HistoryHWScript : MonoBehaviour
             if (q3Correct == 2)
             {
                 sM.historyfinished(3, true);
+                sM.copingSkills[2] = true;
                 nextHistoryQuestion();
             }
             else
@@ -128,6 +130,7 @@ public class HistoryHWScript : MonoBehaviour
             if (q3Correct == 3)
             {
                 sM.historyfinished(3, true);
+                sM.copingSkills[2] = true;
                 nextHistoryQuestion();
             }
             else
@@ -166,6 +169,7 @@ public class HistoryHWScript : MonoBehaviour
             if (q3Correct == 4)
             {
                 sM.historyfinished(3, true);
+                sM.copingSkills[2] = true;
                 nextHistoryQuestion();
             }
             else
@@ -256,7 +260,7 @@ public class HistoryHWScript : MonoBehaviour
                     break;
                 }
             default:
-                question.text = "There are no further questions avaliable";
+                question.text = "You've finished this section of homework!";
                 historySelectionBtn.SetActive(false);
                 break;
         }

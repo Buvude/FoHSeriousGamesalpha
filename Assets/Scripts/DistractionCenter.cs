@@ -13,6 +13,7 @@ public class DistractionCenter : MonoBehaviour
     public TextMeshProUGUI notificationText;
     public string[] notifications;
     public int notificationsQueued = 0, notificationsRead=0, totalNotificationsSpawned=0;
+    public ScoreManager SM;
     public notificationList notifList;
     //public GameObject mentalChoices, phisichalChoices, computerChoices;
     // Start is called before the first frame update
@@ -98,6 +99,9 @@ public class DistractionCenter : MonoBehaviour
         MentalDistraction.loop = false;
         MentalDistraction.Play();
         //mentalChoices.SetActive(false);
+        SM.copingSkills[0] = true;
+        SM.copingSkills[1] = true;
+        
     }
     public void spawnPhysichalDistraction()
     {
