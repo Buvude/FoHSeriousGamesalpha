@@ -18,16 +18,9 @@ public class notificationList : MonoBehaviour
 
     public void setNotifications(string[] notifications)
     {
-        notifications[0] = "You have a new email from:\n" +
-            "Girlfriend\n" +
-            "I feel like we haven't talked in weeks. I miss you! I know we're both busy lately and your family's on your case, and all that… I get it, I really do. That doesn't make it less lonely though.";
-        notifications[1] = "You have a new email from: \n" +
-            "Steambot\n" +
-            "Video Game GOTY Edition and Image Editor 97 from your wishlist are on sale NOW for the next 2 hours!!!!! Get them now!!! Get them now!!! Get them now!!!";
-        notifications[2] = "You have a new email from:\n" +
-            "Katie9715\n" +
-            "H i !!! I am Charlette ,  and I love Singles and Yes Im a girl!!!!!\n" +
-            "your so funnyLets Get married!! All I need is y our social security number and a transfer of $1000 to scam.realsinglehothumanwomen.net and WE wil be together !!!";
+        notifications[0] = "1";
+        notifications[1] = "2";
+        notifications[2] = "3";
         notifications[3] = "4";
         notifications[4] = "5";
         notifications[5] = "6";

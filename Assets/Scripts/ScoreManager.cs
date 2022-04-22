@@ -96,15 +96,15 @@ public class ScoreManager : MonoBehaviour
                 {
                     case 0:
                         copingStrategy1.interactable = false;
-                        copingStrat1txt.text = "???";
+                        copingStrat1txt.text = "How to deal with an 'earworm'";
                         break;
                     case 1:
                         copingStrategy2.interactable = false;
-                        copingStrat2txt.text = "???";
+                        copingStrat2txt.text = "A way to help someone with ADHD focus";
                         break;
                     case 2:
                         copingStrategy3.interactable = false;
-                        copingStrat3txt.text = "???";
+                        copingStrat3txt.text = "How to deal with all the notifications";
                         break;
                     default:
                         break;

@@ -36,7 +36,7 @@ public class Thoughts : MonoBehaviour
         if (firstTimeReadComp)
         {
             StopCoroutine("HWFade");
-            thoughtsTXT.text = "I know one of the passages I bookmarked should have the answer to this…";
+            thoughtsTXT.text = "This is my history homework... I remember that one of these three paragraphs has the answer... if I can select the right one I can answer it fairly easily then";
             StartCoroutine("HWFade", 10f);
         }
     }
