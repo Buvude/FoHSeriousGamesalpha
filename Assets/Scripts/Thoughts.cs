@@ -26,7 +26,7 @@ public class Thoughts : MonoBehaviour
         if (firstTimeProofRead)
         {
             ThoughtSpawn();
-            thoughtsTXT.text = "This is my proofreading, I need to find all the spelling mistakes/typos and fix them before submitting the sentence.";
+            thoughtsTXT.text = "You have a series of sentences in front of you to proofread. Check for evident grammar and spelling errors and change them. If you make a mistake, press RESET. Once there are no errors, press SUBMIT.";
             /*StartCoroutine("HWFade", 5f);*/
         }
     }
