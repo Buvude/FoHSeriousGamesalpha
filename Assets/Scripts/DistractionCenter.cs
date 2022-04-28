@@ -81,7 +81,7 @@ public class DistractionCenter : MonoBehaviour
 
     public void MentalDistractionSpawn()
     {
-        MentalDistraction.volume = .7f;
+        MentalDistraction.volume = .5f;
         MentalDistraction.clip=SynthroidShort;
         MentalDistraction.loop=false;
         MentalDistraction.Play();
