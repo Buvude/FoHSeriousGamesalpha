@@ -25,9 +25,9 @@ public class Thoughts : MonoBehaviour
     {
         if (firstTimeProofRead)
         {
-            StopCoroutine("HWFade");
+            ThoughtSpawn();
             thoughtsTXT.text = "This is my proofreading, I need to find all the spelling mistakes/typos and fix them before submitting the sentence.";
-            StartCoroutine("HWFade", 5f);
+            /*StartCoroutine("HWFade", 5f);*/
         }
     }
 
@@ -35,9 +35,9 @@ public class Thoughts : MonoBehaviour
     {
         if (firstTimeReadComp)
         {
-            StopCoroutine("HWFade");
+            ThoughtSpawn();
             thoughtsTXT.text = "I know one of the passages I bookmarked should have the answer to this…";
-            StartCoroutine("HWFade", 10f);
+            /*StartCoroutine("HWFade", 10f);*/
         }
     }
 
@@ -45,16 +45,25 @@ public class Thoughts : MonoBehaviour
     {
         if (firstkTimeCode)
         {
-            StopCoroutine("HWFade");
+            ThoughtSpawn();
             thoughtsTXT.text = "Programming is easy. I just need to tell the bot what to do, and make sure I do so in the right order while keeping it’s orientation in mind……";
-            StartCoroutine("HWFade", 10f);
+            /*StartCoroutine("HWFade", 10f);*/
         }
     }
 
-    IEnumerator HWFade(float seconds)
+    public void ThoughtSpawn()
     {
         thoughtsPanel.SetActive(true);
-        yield return new WaitForSeconds(seconds);
+    }
+
+    public void ThoughtDespawn()
+    {
         thoughtsPanel.SetActive(false);
     }
+    /*IEnumerator HWFade(float seconds)
+    {
+        *//*thoughtsPanel.SetActive(true);
+        yield return new WaitForSeconds(seconds);
+        thoughtsPanel.SetActive(false);*//*
+    }*/
 }
