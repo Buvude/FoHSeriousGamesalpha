@@ -6,8 +6,8 @@ using TMPro;
 
 public class Thoughts : MonoBehaviour
 {
-    public GameObject thoughtsPanel;
-    public TextMeshProUGUI thoughtsTXT;
+    public GameObject thoughtsPanel,gameOverThoughtsPanel;
+    public TextMeshProUGUI thoughtsTXT, gameOverThoughtsTXT;
     public bool firstTimeProofRead=true, firstkTimeCode=true, firstTimeReadComp=true; //TODO these booleans must only change once the first question is answered
     // Start is called before the first frame update
     void Start()
@@ -51,9 +51,32 @@ public class Thoughts : MonoBehaviour
         }
     }
 
+    public void MusicCopingStrat()
+    {
+        gameOverThoughtSpawn();
+        gameOverThoughtsTXT.text = "PLACEHOLDER EXPLANATION ON HOW MUSIC CAN HELP WITH ADHD/FOCUS (INCLUDING GETTING RID OF AN EARWORM)";
+    }
+
+    public void FidgetCopingStrat()
+    {
+        gameOverThoughtSpawn();
+        gameOverThoughtsTXT.text = "PLACEHOLDER EXPLANATION ON HOW FIDGETING CAN HELP WITH ADHD/FOCUS";
+    }
+
+    public void TaskSwitchCopingStrat()
+    {
+        gameOverThoughtSpawn();
+        gameOverThoughtsTXT.text = "PLACEHOLDER EXPLANATION ON HOW SWITCHING TASKS CAN HELP WITH ADHD/FOCUS (INCLUDING GETTING RID OF AN EARWORM)";
+    }
+
     public void ThoughtSpawn()
     {
         thoughtsPanel.SetActive(true);
+    }
+
+    public void gameOverThoughtSpawn()
+    {
+        gameOverThoughtsPanel.SetActive(true);
     }
 
     public void ThoughtDespawn()
