@@ -14,7 +14,6 @@ public class HistoryHWScript : MonoBehaviour
     private string q1p3 = "The last war fought by Admiral Colonel Sergeant Gary \"Garry\" Garrison - Grover took place in the berry fields of East Jerusalem.The war consisted of a dispute that broke out when Gary stepped on a shopkeeper's toes and refused to apologize. \"It became a whole thing,\" Gary would later recount in his memoir. \"Scariest war I've ever been in. I didn\'t realize what I\'d done at first, so I thought the guy was being unreasonable.But then his son came out and asked what happened, and that\'s when I noticed that the guy had crutches, and his foot was probably already messed up. But by then the son was yelling at me, and I\'d already defended myself, and it was too late to back down and apologize.Then this nice older lady came over asking what all the fuss was about, and all I could do was just stay quiet.I wanted to crawl into a hole.It was so awkward, oh my god.\" Gary passed away in the early 1500\'s, having only just held on long enough to see the turn of the century.";
     public GameObject paragraphSelectors, historySelectionBtn;
     public ScoreManager sM;
-    public int q3Correct;
     public Thoughts thou;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +24,7 @@ public class HistoryHWScript : MonoBehaviour
         answerC.text = "paragraph 3";
         answerD.text = " The answer is not in the text";
         question.text = "What was the primary cause of the 1541 Cotton Candy Wars?";
-        q3Correct = Random.Range(1,5);
+        //q3Correct = Random.Range(1,5);
 
     }
 
@@ -50,7 +49,7 @@ public class HistoryHWScript : MonoBehaviour
 
         else if (questionNumber == 3)
         {
-            if (q3Correct == 1)
+            if (DCMain.q3Correct == 1)
             {
                 sM.historyfinished(3, true);
                 sM.copingSkills[2] = true;
@@ -89,7 +88,7 @@ public class HistoryHWScript : MonoBehaviour
 
         else if (questionNumber == 3)
         {
-            if (q3Correct == 2)
+            if (DCMain.q3Correct == 2)
             {
                 sM.historyfinished(3, true);
                 sM.copingSkills[2] = true;
@@ -127,7 +126,7 @@ public class HistoryHWScript : MonoBehaviour
         }
         else if (questionNumber == 3)
         {
-            if (q3Correct == 3)
+            if (DCMain.q3Correct == 3)
             {
                 sM.historyfinished(3, true);
                 sM.copingSkills[2] = true;
@@ -166,7 +165,7 @@ public class HistoryHWScript : MonoBehaviour
 
         else if (questionNumber == 3)
         {
-            if (q3Correct == 4)
+            if (DCMain.q3Correct == 4)
             {
                 sM.historyfinished(3, true);
                 sM.copingSkills[2] = true;
@@ -224,7 +223,7 @@ public class HistoryHWScript : MonoBehaviour
                 }
             case 3:
                 {
-                    question.text = "Question 3: What was the Cincinnati Scoundrel’s first name?" + q3Correct;
+                    question.text = "Question 3: What was the Cincinnati Scoundrel’s first name?"/* + DCMain.q3Correct*/;
                     answerA.text = " Bubbles";
                     answerB.text = "Dave";
                     answerC.text = "Wimbledon";

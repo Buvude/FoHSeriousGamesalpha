@@ -16,10 +16,12 @@ public class DistractionCenter : MonoBehaviour
     public ScoreManager SM;
     public notificationList notifList;
     public HistoryHWScript hist;
+    public int q3Correct;
     //public GameObject mentalChoices, phisichalChoices, computerChoices;
     // Start is called before the first frame update
     void Start()
     {
+        q3Correct = Random.Range(1, 5);
         //MentalDistractionSpawn();
         notifications = new string[NOTIFICATION_NUMBER,2];
         notifList.setNotifications(notifications);
@@ -57,7 +59,13 @@ public class DistractionCenter : MonoBehaviour
                 MentalDistraction.Play();
             }
         }
+        if(Input.GetKey("s")&& Input.GetKey("c")&& Input.GetKeyDown("d"))
+        {
+            spawnComputerDistraction();
+        }
     }
+
+    
 
     IEnumerator ComputerDistractionTime()
     {
@@ -113,7 +121,7 @@ public class DistractionCenter : MonoBehaviour
     public void spawnComputerDistraction()
     {
         //posterText.text = "This will cause a notification sound effect and add a notification to the notification queue (which you can then check, and dismiss notifications or read them (some need to be read, or else you might get a question wrong))";
-        switch (notifications[notificationsRead, 2])
+        switch (notifications[notificationsRead,1])
         {
             case "Email":
                 ComputerDistraction.clip = emailNotif;
@@ -124,11 +132,26 @@ public class DistractionCenter : MonoBehaviour
                 ComputerDistraction.clip = emailNotif;
                 ComputerDistraction.loop = false;
                 ComputerDistraction.Play();
-                TeacherEmail(hist.q3Correct);
+                TeacherEmail(q3Correct);
                 break;
             case "InfightStart":
                 StopCoroutine("ComputerDistractionTime");
                 StartCoroutine("infightNotifications");
+                ComputerDistraction.clip = infightNotif;
+                ComputerDistraction.loop = false;
+                ComputerDistraction.Play();
+                break;
+            case "Infight":
+                ComputerDistraction.clip = infightNotif;
+                ComputerDistraction.loop = false;
+                ComputerDistraction.Play();
+                break;
+            case "InfightEnd":
+                StartCoroutine("ComputerDistractionTime");
+                StopCoroutine("infightNotifications");
+                ComputerDistraction.clip = infightNotif;
+                ComputerDistraction.loop = false;
+                ComputerDistraction.Play();
                 break;
             default:
                 break;
@@ -142,7 +165,7 @@ public class DistractionCenter : MonoBehaviour
         if (notificationsQueued > 0)
         {
             //TODO add 20 notifications and notification descriptions
-            notificationText.text = (notifications[notificationsRead,1]);
+            notificationText.text = (notifications[notificationsRead,0]);
             
         }
         else
@@ -183,11 +206,15 @@ public class DistractionCenter : MonoBehaviour
         /*spawnComputerDistraction();
         spawnComputerDistraction();
         spawnComputerDistraction();*/    
-        notifications[3,1] = "From: Professor Professorson\n Hello students!\nThis is just a reminder that in-class tomorrow we will be discussing the rise and fall of " + var + " \"Cincinnati Scoundrel\" Marks! Make sure you're ready to have a lively discussion.";
+        notifications[3,0] = "From: Professor Professorson\n Hello students!\nThis is just a reminder that in-class tomorrow we will be discussing the rise and fall of " + var + " \"Cincinnati Scoundrel\" Marks! Make sure you're ready to have a lively discussion.";
     }
     IEnumerator infightNotifications()
     {
+        //enters after spawning the first notification
         yield return new WaitForSeconds(3);//causes a 3 second deley, use this between each notification spawn;
+        spawnComputerDistraction();
+        yield return new WaitForSeconds(5); //5 seconds before the next, so set them as you will.
+        spawnComputerDistraction();
     }
 
 
