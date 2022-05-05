@@ -9,18 +9,19 @@ public class DistractionCenter : MonoBehaviour
     public bool corutineMentalGoing = false, mentalDistractionHappening = false;
     public string var;
     public AudioSource MentalDistraction, PhysichalDistraction, ComputerDistraction;
-    public AudioClip SynthroidShort, SynthroidFull, dingSoud;
+    public AudioClip SynthroidShort, SynthroidFull, emailNotif, infightNotif, socMedNotif;
     public TextMeshProUGUI notificationText;
-    public string[] notifications;
+    public string[,] notifications;
     public int notificationsQueued = 0, notificationsRead=0, totalNotificationsSpawned=0;
     public ScoreManager SM;
     public notificationList notifList;
+    public HistoryHWScript hist;
     //public GameObject mentalChoices, phisichalChoices, computerChoices;
     // Start is called before the first frame update
     void Start()
     {
         //MentalDistractionSpawn();
-        notifications = new string[20];
+        notifications = new string[NOTIFICATION_NUMBER,2];
         notifList.setNotifications(notifications);
         /*for (int i = 0; i < 40; i++)
         {
@@ -30,7 +31,7 @@ public class DistractionCenter : MonoBehaviour
         StartCoroutine("ComputerDistractionTime");
         StartCoroutine("MentalDistractionTime");
     }
-    
+    public const int NOTIFICATION_NUMBER = notificationList.NOTIFICATION_NUMBER;
     // Update is called once per frame
     void Update()
     {
@@ -112,9 +113,26 @@ public class DistractionCenter : MonoBehaviour
     public void spawnComputerDistraction()
     {
         //posterText.text = "This will cause a notification sound effect and add a notification to the notification queue (which you can then check, and dismiss notifications or read them (some need to be read, or else you might get a question wrong))";
-        PhysichalDistraction.clip = dingSoud;
-        PhysichalDistraction.loop = false;
-        PhysichalDistraction.Play();
+        switch (notifications[notificationsRead, 2])
+        {
+            case "Email":
+                ComputerDistraction.clip = emailNotif;
+                ComputerDistraction.loop = false;
+                ComputerDistraction.Play();//do this for all notificaiton types (for the sounds)
+                break;
+            case "ProffessorEmail":
+                ComputerDistraction.clip = emailNotif;
+                ComputerDistraction.loop = false;
+                ComputerDistraction.Play();
+                TeacherEmail(hist.q3Correct);
+                break;
+            case "InfightStart":
+                StopCoroutine("ComputerDistractionTime");
+                StartCoroutine("infightNotifications");
+                break;
+            default:
+                break;
+        }
         notificationsQueued++;
         checkNotificationQueue();
     }
@@ -124,7 +142,8 @@ public class DistractionCenter : MonoBehaviour
         if (notificationsQueued > 0)
         {
             //TODO add 20 notifications and notification descriptions
-            notificationText.text = (notifications[notificationsRead]);
+            notificationText.text = (notifications[notificationsRead,1]);
+            
         }
         else
         {
@@ -161,20 +180,14 @@ public class DistractionCenter : MonoBehaviour
                 var = " Stabby ";
                 break;
         }
+        /*spawnComputerDistraction();
         spawnComputerDistraction();
-        spawnComputerDistraction();
-        spawnComputerDistraction();
-
-        if (notificationsRead < 19)
-        {
-            notifications[notificationsRead + 1] = "From: Professor Professorson\n Hello students!\nThis is just a reminder that in-class tomorrow we will be discussing the rise and fall of " + var + " \"Cincinnati Scoundrel\" Marks! Make sure you're ready to have a lively discussion.";
-        }
-        else
-        {
-            notifications[notificationsRead] = "From: Professor Professorson\n Hello students!\nThis is just a reminder that in-class tomorrow we will be discussing the rise and fall of " + var + " \"Cincinnati Scoundrel\" Marks! Make sure you're ready to have a lively discussion.";
-
-        }
-
+        spawnComputerDistraction();*/    
+        notifications[3,1] = "From: Professor Professorson\n Hello students!\nThis is just a reminder that in-class tomorrow we will be discussing the rise and fall of " + var + " \"Cincinnati Scoundrel\" Marks! Make sure you're ready to have a lively discussion.";
+    }
+    IEnumerator infightNotifications()
+    {
+        yield return new WaitForSeconds(3);//causes a 3 second deley, use this between each notification spawn;
     }
 
 

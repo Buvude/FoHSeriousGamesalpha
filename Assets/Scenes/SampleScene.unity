@@ -10320,14 +10320,16 @@ MonoBehaviour:
   ComputerDistraction: {fileID: 1596480991}
   SynthroidShort: {fileID: 8300000, guid: 32be6840280aa7e448f6b207bb682738, type: 3}
   SynthroidFull: {fileID: 8300000, guid: 3adc2760175d9e542bdebe9eb36edd99, type: 3}
-  dingSoud: {fileID: 8300000, guid: 7ae1acb02a8d9a148a85b9648482e753, type: 3}
+  emailNotif: {fileID: 8300000, guid: 7ae1acb02a8d9a148a85b9648482e753, type: 3}
+  infightNotif: {fileID: 8300000, guid: 7ae1acb02a8d9a148a85b9648482e753, type: 3}
+  socMedNotif: {fileID: 8300000, guid: 7ae1acb02a8d9a148a85b9648482e753, type: 3}
   notificationText: {fileID: 62734598}
-  notifications: []
   notificationsQueued: 0
   notificationsRead: 0
   totalNotificationsSpawned: 0
   SM: {fileID: 282172815}
   notifList: {fileID: 853622546}
+  hist: {fileID: 0}
 --- !u!4 &853622548
 Transform:
   m_ObjectHideFlags: 0
@@ -13833,7 +13835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.68789047, y: 0.23400001}
   m_AnchorMax: {x: 0.922226, y: 0.31167737}
-  m_AnchoredPosition: {x: 0, y: -2.0399933}
+  m_AnchoredPosition: {x: 0, y: -2.039978}
   m_SizeDelta: {x: -2, y: 10.889999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1125922527
@@ -18618,7 +18620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.8381958, y: 8.359375}
+  m_AnchoredPosition: {x: -0.83813477, y: 8.359375}
   m_SizeDelta: {x: -522.2906, y: -263.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1689047745
