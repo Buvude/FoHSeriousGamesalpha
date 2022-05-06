@@ -220,38 +220,38 @@ public class DistractionCenter : MonoBehaviour
     IEnumerator infightNotifications()
     {
         //enters after spawning the first notification
-        yield return new WaitForSeconds(3);//causes a 3 second delay, use this between each notification spawn;
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(5); //5 seconds before the next, so set them as you will.
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(3);//causes a 3 second delay, use this between each notification spawn;
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(5); //5 seconds before the next, so set them as you will.
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(3);//causes a 3 second delay, use this between each notification spawn;
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(5); //5 seconds before the next, so set them as you will.
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(3);//causes a 3 second delay, use this between each notification spawn;
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(5); //5 seconds before the next, so set them as you will.
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(3);//causes a 3 second delay, use this between each notification spawn;
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(5); //5 seconds before the next, so set them as you will.
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(3);//causes a 3 second delay, use this between each notification spawn;
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(5); //5 seconds before the next, so set them as you will.
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(3);//causes a 3 second delay, use this between each notification spawn;
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(5); //5 seconds before the next, so set them as you will.
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(3);//causes a 3 second delay, use this between each notification spawn;
-        spawnComputerDistraction();
-        yield return new WaitForSeconds(5); //5 seconds before the next, so set them as you will.
-        spawnComputerDistraction();
+        
+        spawnComputerDistraction(); //do we have classes?
+        yield return new WaitForSeconds(5); 
+        spawnComputerDistraction(); //no
+        yield return new WaitForSeconds(3);
+        spawnComputerDistraction(); //yes we do
+        yield return new WaitForSeconds(4); 
+        spawnComputerDistraction(); //teachers work day
+        yield return new WaitForSeconds(3);
+        spawnComputerDistraction(); //you mean a conference day?
+        yield return new WaitForSeconds(2); 
+        spawnComputerDistraction(); //yeah that
+        yield return new WaitForSeconds(1);
+        spawnComputerDistraction(); //WHAT?
+        yield return new WaitForSeconds(1); 
+        spawnComputerDistraction(); //NO
+        yield return new WaitForSeconds(1);
+        spawnComputerDistraction(); //WHAT
+        yield return new WaitForSeconds(2);
+        spawnComputerDistraction(); //I did not know that
+        yield return new WaitForSeconds(5);
+        spawnComputerDistraction(); //admin clarifies
+        yield return new WaitForSeconds(3);
+        spawnComputerDistraction(); //someone unionize our teachers
+        yield return new WaitForSeconds(1);
+        spawnComputerDistraction(); //I have a project
+        yield return new WaitForSeconds(2); 
+        spawnComputerDistraction(); //focus on homework
+        yield return new WaitForSeconds(1);
+        spawnComputerDistraction(); //NO
+        yield return new WaitForSeconds(5); 
+        spawnComputerDistraction(); //dang we causin discord
     }
 
 
