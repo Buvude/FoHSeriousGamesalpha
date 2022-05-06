@@ -10319,9 +10319,9 @@ MonoBehaviour:
   ComputerDistraction: {fileID: 1596480991}
   SynthroidShort: {fileID: 8300000, guid: 32be6840280aa7e448f6b207bb682738, type: 3}
   SynthroidFull: {fileID: 8300000, guid: 3adc2760175d9e542bdebe9eb36edd99, type: 3}
-  emailNotif: {fileID: 8300000, guid: 7ae1acb02a8d9a148a85b9648482e753, type: 3}
-  infightNotif: {fileID: 8300000, guid: 7ae1acb02a8d9a148a85b9648482e753, type: 3}
-  socMedNotif: {fileID: 8300000, guid: 7ae1acb02a8d9a148a85b9648482e753, type: 3}
+  emailNotif: {fileID: 8300000, guid: 9b9f994fcb022974297f2a9286c9bc67, type: 3}
+  infightNotif: {fileID: 8300000, guid: cc21a81501938f14f9fe9947cd9ff6ef, type: 3}
+  socMedNotif: {fileID: 8300000, guid: d4bf6a5f546ecc247bb52554f6aff65b, type: 3}
   notificationText: {fileID: 62734598}
   notificationsQueued: 0
   notificationsRead: 0
