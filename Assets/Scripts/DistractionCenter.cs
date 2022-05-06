@@ -21,6 +21,7 @@ public class DistractionCenter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("test");
         q3Correct = Random.Range(1, 5);
         //MentalDistractionSpawn();
         notifications = new string[NOTIFICATION_NUMBER,2];
@@ -37,6 +38,7 @@ public class DistractionCenter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         totalNotificationsSpawned = notificationsQueued + notificationsRead;
         if (!MentalDistraction.isPlaying&&!corutineMentalGoing)
         {
@@ -59,8 +61,10 @@ public class DistractionCenter : MonoBehaviour
                 MentalDistraction.Play();
             }
         }
-        if(Input.GetKey("s")&& Input.GetKey("c")&& Input.GetKeyDown("d"))
+        /*Debug.Log("testII");*/
+        if (/*Input.GetKey("s") &&*/ Input.GetKey("c") && Input.GetKeyDown("d"))
         {
+            Debug.Log("testIII");
             spawnComputerDistraction();
         }
     }
@@ -153,6 +157,11 @@ public class DistractionCenter : MonoBehaviour
                 ComputerDistraction.loop = false;
                 ComputerDistraction.Play();
                 break;
+            case "SocMed":
+                ComputerDistraction.clip = socMedNotif;
+                ComputerDistraction.loop = false;
+                ComputerDistraction.Play();
+                break;
             default:
                 break;
         }
@@ -176,7 +185,7 @@ public class DistractionCenter : MonoBehaviour
 
     public void ignoreNotification()
     {
-        if (notificationsRead == 19)
+        if (notificationsRead == NOTIFICATION_NUMBER-1)
         {
             notificationsRead = -1;
             notifList.setNotifications(notifications);
