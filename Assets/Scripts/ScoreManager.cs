@@ -40,7 +40,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimerText.text = TIME.ToString();
+        
         HWPercentage.value = assignmentsAnswered;
         if (HWPercentage.value == 15)
         {
@@ -262,6 +262,7 @@ public class ScoreManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             TIME--;
+            TimerText.text = TIME.ToString();
         }
         warningSounds.clip = smallWarning;
         warningSounds.loop = true;
@@ -270,6 +271,7 @@ public class ScoreManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             TIME--;
+            TimerText.text = TIME.ToString();
         }
         warningSounds.clip = bigWarning;
         warningSounds.loop = true;
@@ -278,6 +280,7 @@ public class ScoreManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             TIME--;
+            TimerText.text = TIME.ToString();
         }
         warningSounds.Stop();
         finished();

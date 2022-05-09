@@ -9,7 +9,7 @@ public class CodingHWScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        commands = new string[10];   
+        commands = new string[11];   
     }
     public Thoughts thou;
     public DistractionCenter DCMain;
@@ -134,7 +134,7 @@ public class CodingHWScript : MonoBehaviour
                     {
                         outputstring += s;
                     }
-                    if (outputstring == "F, R, F, F, F, R, F, F, L, F, ")
+                    if (outputstring == "F, R, F, F, F, R, F, F, L, F,")
                     {
                         SM.codingFinished(1, true);
                     }
@@ -155,7 +155,7 @@ public class CodingHWScript : MonoBehaviour
                     {
                         outputstring += s;
                     }
-                    if (outputstring == "F, F, L, F, F, R, F, R, F, F, ")
+                    if (outputstring == "F, F, L, F, F, R, F, R, F, F,")
                     {
                         SM.codingFinished(2, true);
                     }
@@ -174,7 +174,7 @@ public class CodingHWScript : MonoBehaviour
                     {
                         outputstring += s;
                     }
-                    if (outputstring == "F, L, F, L, F, F, L, F, R, F, ")
+                    if (outputstring == "F, L, F, L, F, F, L, F, R, F,")
                     {
                         SM.codingFinished(3, true);
                     }
@@ -193,7 +193,7 @@ public class CodingHWScript : MonoBehaviour
                     {
                         outputstring += s;
                     }
-                    if (outputstring == "F, F, R, F, F, L, F, F, L, F, ")
+                    if (outputstring == "F, F, R, F, F, L, F, F, L, F,")
                     {
                         SM.codingFinished(4, true);
                     }
@@ -212,7 +212,7 @@ public class CodingHWScript : MonoBehaviour
                     {
                         outputstring += s;
                     }
-                    if (outputstring == "R, F, F, L, F, F, L, F, F, F, ")
+                    if (outputstring == "R, F, F, L, F, F, L, F, F, F,")
                     {
                         SM.codingFinished(5, true);
                     }
@@ -239,7 +239,7 @@ public class CodingHWScript : MonoBehaviour
                 {
                     puzzle1.SetActive(false);
                     puzzle2.SetActive(true);
-                    for (int x = 0; x < 10; x++)
+                    for (int x = 0; x < 11; x++)
                     {
                         commands.SetValue("", x);
                     }
@@ -250,7 +250,7 @@ public class CodingHWScript : MonoBehaviour
                 {
                     puzzle2.SetActive(false);
                     puzzle3.SetActive(true);
-                    for (int x = 0; x < 10; x++)
+                    for (int x = 0; x < 11; x++)
                     {
                         commands.SetValue("", x);
                     }
@@ -261,7 +261,7 @@ public class CodingHWScript : MonoBehaviour
                 {
                     puzzle3.SetActive(false);
                     puzzle4.SetActive(true);
-                    for (int x = 0; x < 10; x++)
+                    for (int x = 0; x < 11; x++)
                     {
                         commands.SetValue("", x);
                     }
@@ -272,7 +272,7 @@ public class CodingHWScript : MonoBehaviour
                 {
                     puzzle4.SetActive(false);
                     puzzle5.SetActive(true);
-                    for (int x = 0; x < 10; x++)
+                    for (int x = 0; x < 11; x++)
                     {
                         commands.SetValue("", x);
                     }

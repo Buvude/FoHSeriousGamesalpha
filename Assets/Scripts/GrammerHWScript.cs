@@ -53,7 +53,7 @@ public class GrammerHWScript : MonoBehaviour
         {
             case 1:
                 {
-                    if (iField.text == q1Correct)
+                    if (iField.text.ToString().Equals(q1Correct.ToString()))
                     {
                         sM.ProofReadingFinished(1, true);
                         proofReadingQuestionNumber++;
@@ -69,7 +69,7 @@ public class GrammerHWScript : MonoBehaviour
                 break;
             case 2:
                 {
-                    if (iField.text == q2Correct)
+                    if (iField.text.ToString().Equals(q2Correct))
                     {
                         sM.ProofReadingFinished(2, true);
                         proofReadingQuestionNumber++;
@@ -85,7 +85,7 @@ public class GrammerHWScript : MonoBehaviour
                 }
             case 3:
                 {
-                    if (iField.text == q3Correct)
+                    if (iField.text.ToString().Equals(q3Correct))
                     {
                         sM.ProofReadingFinished(3, true);
                         proofReadingQuestionNumber++;
@@ -101,7 +101,7 @@ public class GrammerHWScript : MonoBehaviour
                 break;
             case 4:
                 {
-                    if (iField.text == q4Correct)
+                    if (iField.text.ToString().Equals(q4Correct))
                     {
                         sM.ProofReadingFinished(4, true);
                         proofReadingQuestionNumber++;
@@ -117,7 +117,7 @@ public class GrammerHWScript : MonoBehaviour
                 break;
             case 5:
                 {
-                    if (iField.text == q5Correct)
+                    if (iField.text.ToString().Equals(q5Correct))
                     {
                         sM.ProofReadingFinished(5, true);
                         proofReadingQuestionNumber++;
