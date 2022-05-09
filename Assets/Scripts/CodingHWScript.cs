@@ -280,6 +280,9 @@ public class CodingHWScript : MonoBehaviour
                     break;
                 }
             default:
+                selectionbtn.SetActive(false);
+                puzzle5.SetActive(false);
+                output.text = "You have finished your coding homework!";
                 break;
         }
     }

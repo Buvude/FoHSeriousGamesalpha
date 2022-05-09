@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -10,29 +11,42 @@ public class ScoreManager : MonoBehaviour
     public const int TOTAL=15;
     public bool[] accuracyProofRead=new bool[5], accuracyCoding=new bool[5], accuracyReadingComp=new bool[5], copingSkills=new bool[3]; //true is right, false is wrong
     public string[] accuracyProofReadstring = new string[5], accuracyCodingstring = new string[5], accuracyReadingCompstring = new string[5];
-    public int assignmentsAnswered = 0;
+    public int assignmentsAnswered = 0, TIME=600, halfTime, finalStretch;//TIMER NUMBER MUST BE SET IN EDITOR
     public Slider HWPercentage, StressMeter;
     public Button copingStrategy1, copingStrategy2, copingStrategy3;
-    public TextMeshProUGUI copingStrat1txt, copingStrat2txt, copingStrat3txt;
+    public TextMeshProUGUI copingStrat1txt, copingStrat2txt, copingStrat3txt, TimerText;
     private int eLAScore = 5, CodingScore = 5, HistoryScore = 5;
    /* public GrammerHWScript gHWS;*/
     public GameObject proofReading, Coding, HistoryReader, gameOver;//*/
     public TextMeshProUGUI EnglishScoretxt, CodingScoretxt, HistoryScoretxt/*, copingscoretxt*/;
     public DistractionCenter DC;
+    public AudioSource warningSounds;
+    public AudioClip smallWarning, bigWarning;
     // Start is called before the first frame update
     void Start()
     {
-        
+        halfTime = TIME / 2;
+        finalStretch = TIME / 5;
+    }
+    public void ToMainGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void ToTittleScreen()
+    {
+        SceneManager.LoadScene(0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        TimerText.text = TIME.ToString();
         HWPercentage.value = assignmentsAnswered;
         if (HWPercentage.value == 15)
         {
             finished();
         }
+
     }
 
     public void finished()
@@ -75,16 +89,16 @@ public class ScoreManager : MonoBehaviour
                 switch (x)
                 {
                     case 0:
-                        copingStrategy1.interactable = true;
-                        copingStrat1txt.text = "Listening to a song all the way through to get rid of an 'earworm'";
+/*                        copingStrategy1.interactable = true;
+*/                        copingStrat1txt.text = "Listening to a song all the way through to get rid of an 'earworm'";
                         break;
                     case 1:
-                        copingStrategy2.interactable = true;
-                        copingStrat2txt.text = "Listening to music while you work to help you concentrate";
+/*                        copingStrategy2.interactable = true;
+*/                        copingStrat2txt.text = "Listening to music while you work to help people with ADHD concentrate";
                         break;
                     case 2:
-                        copingStrategy3.interactable = true;
-                        copingStrat3txt.text = "Ignoring notifications on your computer unless...";
+/*                        copingStrategy3.interactable = true;
+*/                        copingStrat3txt.text = "Ignoring notifications on your computer unless they pile up can be tricky but worth it";
                         break;
                     default:
                         break;
@@ -241,5 +255,31 @@ public class ScoreManager : MonoBehaviour
         {
             incorrect++;
         }
+    }
+    IEnumerator Timer()
+    {
+        while(TIME>halfTime)
+        {
+            yield return new WaitForSeconds(1);
+            TIME--;
+        }
+        warningSounds.clip = smallWarning;
+        warningSounds.loop = true;
+        warningSounds.Play();
+        while (TIME > finalStretch)
+        {
+            yield return new WaitForSeconds(1);
+            TIME--;
+        }
+        warningSounds.clip = bigWarning;
+        warningSounds.loop = true;
+        warningSounds.Play();
+        while (TIME > 0)
+        {
+            yield return new WaitForSeconds(1);
+            TIME--;
+        }
+        warningSounds.Stop();
+        finished();
     }
 }

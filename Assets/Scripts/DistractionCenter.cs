@@ -10,7 +10,7 @@ public class DistractionCenter : MonoBehaviour
     public string var;
     public AudioSource MentalDistraction, PhysichalDistraction, ComputerDistraction;
     public AudioClip SynthroidShort, SynthroidFull, emailNotif, infightNotif, socMedNotif;
-    public TextMeshProUGUI notificationText;
+    public TextMeshProUGUI notificationText, notificationQueueText;
     public string[,] notifications;
     public int notificationsQueued = 0, notificationsRead=0, totalNotificationsSpawned=0;
     public ScoreManager SM;
@@ -21,6 +21,7 @@ public class DistractionCenter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SM.StartCoroutine("Timer");
         Debug.Log("test");
         q3Correct = Random.Range(1, 5);
         //MentalDistractionSpawn();
@@ -166,6 +167,7 @@ public class DistractionCenter : MonoBehaviour
                 break;
         }
         notificationsQueued++;
+        notificationQueueText.text = "You have a notification! (" + notificationsQueued + ")";
         checkNotificationQueue();
     }
 
@@ -180,6 +182,7 @@ public class DistractionCenter : MonoBehaviour
         else
         {
             notificationText.text = "No more notifications at this time!";
+            notificationQueueText.text = "No notifications";
         }
     }
 
