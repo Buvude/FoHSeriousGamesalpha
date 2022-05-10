@@ -22,6 +22,7 @@ public class ScoreManager : MonoBehaviour
     public DistractionCenter DC;
     public AudioSource warningSounds;
     public AudioClip smallWarning, bigWarning;
+    public bool stop = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +43,9 @@ public class ScoreManager : MonoBehaviour
     {
         
         HWPercentage.value = assignmentsAnswered;
-        if (HWPercentage.value == 15)
+        if (HWPercentage.value == 15&&!stop)
         {
+            stop = true;
             finished();
         }
 
@@ -125,6 +127,7 @@ public class ScoreManager : MonoBehaviour
                 }
             }
         }
+        Debug.Log(eLAScore + "\n" + HistoryScore + "\n" + CodingScore);
         switch (eLAScore)
         {
             case 5:
