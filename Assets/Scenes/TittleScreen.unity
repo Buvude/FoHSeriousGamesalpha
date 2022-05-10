@@ -206,9 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1659434638}
-        m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 1659434639}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: quitTheGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1976,6 +1976,9 @@ MonoBehaviour:
   - 
   - 
   assignmentsAnswered: 0
+  TIME: 600
+  halfTime: 0
+  finalStretch: 0
   HWPercentage: {fileID: 0}
   StressMeter: {fileID: 0}
   copingStrategy1: {fileID: 0}
@@ -1984,6 +1987,7 @@ MonoBehaviour:
   copingStrat1txt: {fileID: 0}
   copingStrat2txt: {fileID: 0}
   copingStrat3txt: {fileID: 0}
+  TimerText: {fileID: 0}
   proofReading: {fileID: 0}
   Coding: {fileID: 0}
   HistoryReader: {fileID: 0}
@@ -1992,6 +1996,10 @@ MonoBehaviour:
   CodingScoretxt: {fileID: 0}
   HistoryScoretxt: {fileID: 0}
   DC: {fileID: 0}
+  warningSounds: {fileID: 0}
+  smallWarning: {fileID: 0}
+  bigWarning: {fileID: 0}
+  stop: 0
 --- !u!1 &1838224483
 GameObject:
   m_ObjectHideFlags: 0
