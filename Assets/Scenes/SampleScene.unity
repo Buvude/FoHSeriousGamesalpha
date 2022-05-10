@@ -3285,7 +3285,7 @@ MonoBehaviour:
   - 
   - 
   assignmentsAnswered: 0
-  TIME: 600
+  TIME: 300
   halfTime: 0
   finalStretch: 0
   HWPercentage: {fileID: 1944805709}
@@ -3308,6 +3308,7 @@ MonoBehaviour:
   warningSounds: {fileID: 282172818}
   smallWarning: {fileID: 8300000, guid: c3edc657f47876c45a27e774b196f5ac, type: 3}
   bigWarning: {fileID: 8300000, guid: 11d6c06267d82e545968974fd2350e87, type: 3}
+  stop: 0
 --- !u!114 &282172816
 MonoBehaviour:
   m_ObjectHideFlags: 0

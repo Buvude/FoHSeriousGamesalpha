@@ -53,9 +53,9 @@ public class GrammerHWScript : MonoBehaviour
         {
             case 1:
                 {
-                    Debug.Log(iField.Equals(q1Correct));
+                    Debug.Log(iField.text.Equals(q1Correct));
                    /* if (string.Compare(iField.text.ToString(),q1Correct.ToString())==0)*/
-                   if(iField.Equals(q1Correct))
+                   if(iField.text.Equals(q1Correct))
                     {
                         sM.ProofReadingFinished(1, true);
                         proofReadingQuestionNumber++;
@@ -71,7 +71,7 @@ public class GrammerHWScript : MonoBehaviour
                 break;
             case 2:
                 {
-                    Debug.Log(iField.text.ToString().Equals(q2Correct).ToString());
+                    Debug.Log(iField.Equals(q2Correct));
                     if (iField.text.ToString().Equals(q2Correct))
                     {
                         sM.ProofReadingFinished(2, true);
