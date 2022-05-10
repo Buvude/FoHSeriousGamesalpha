@@ -51,6 +51,10 @@ public class ScoreManager : MonoBehaviour
 
     }
 
+    public void quitTheGame()
+    {
+        Application.Quit();
+    }
     public void finished()
     {
         gameOver.SetActive(true);
