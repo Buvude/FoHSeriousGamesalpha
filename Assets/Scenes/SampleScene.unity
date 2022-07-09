@@ -5660,7 +5660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &473846442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5703,7 +5703,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thou: {fileID: 282172816}
   DCMain: {fileID: 853622547}
-  commands: []
   index: 0
   output: {fileID: 61041877}
   puzzleNumber: 1
