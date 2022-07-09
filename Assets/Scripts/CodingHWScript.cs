@@ -15,11 +15,11 @@ public class CodingHWScript : MonoBehaviour
             enumerations[i]=commands.None;
         }
     }
-    public enum commands { Up, Down, Left, Right, None };
+    public enum commands { Forward, Back, Left, Right, None };
     public Thoughts thou;
     public DistractionCenter DCMain;
     //public string[] commands;
-    object[] enumerations = new object[10];
+    public object[] enumerations = new object[10];
     public int index=1;
     public TextMeshProUGUI output;
     private string outputstring;
@@ -36,12 +36,13 @@ public class CodingHWScript : MonoBehaviour
     {
         if (index < 10/*&&puzzleNumber==1*/)
         {
-            commands.SetValue("F, ", index );
+            enumerations.SetValue(commands.Forward, index );
             index++;
             outputstring = "";
-            foreach(string s in commands)
+            foreach(object s in enumerations)
             {
-                outputstring += s;
+                outputstring += s.ToString()+"\n";
+                
             }
             output.text = outputstring;
         }
@@ -60,15 +61,15 @@ public class CodingHWScript : MonoBehaviour
     {
         if (index < 10 /*&& puzzleNumber == 1*/)
         {
-            commands.SetValue("L, ", index);
+            enumerations.SetValue(commands.Left, index);
             index++;
             outputstring = "";
-            foreach (string s in commands)
+            foreach (object s in enumerations)
             {
-                outputstring += s;
+                outputstring += s.ToString()+"\n";
             }
             output.text = outputstring;
-    }
+        }
         /* else if (puzzleNumber > 1)
         {
             output.text = "No further puzzles in this version";
@@ -84,12 +85,12 @@ public class CodingHWScript : MonoBehaviour
     {
         if (index < 10/* && puzzleNumber == 1*/)
         {
-            commands.SetValue("R, ", index);
+            enumerations.SetValue(commands.Right, index);
             index++;
             outputstring = "";
-            foreach (string s in commands)
+            foreach (object s in enumerations)
             {
-                outputstring += s;
+                outputstring += s.ToString() + "\n";
             }
             output.text = outputstring;
         }
@@ -109,13 +110,14 @@ public class CodingHWScript : MonoBehaviour
         if (index >= 1/*&&puzzleNumber==1*/)
         {
             index--;
-            commands.SetValue(" ", index);
+            enumerations.SetValue(commands.None, index);
             outputstring = "";
-            foreach (string s in commands)
+            foreach (object s in enumerations)
             {
-                outputstring += s;
+                outputstring += s.ToString() + "\n";
             }
             output.text = outputstring;
+            
         }
        /* else if (puzzleNumber > 1)
         {
@@ -128,7 +130,46 @@ public class CodingHWScript : MonoBehaviour
 
 
     }
-    
+    public bool AnswerCheck(int QNum)
+    {
+        bool correct = false;
+        if (QNum == 1)
+        {
+            //TODO add animation?
+            if (enumerations[0].Equals(commands.Forward))
+            {
+                if (enumerations[1].Equals(commands.Right))
+                {
+                    if (enumerations[2].Equals(commands.Forward))
+                    {
+                        if (enumerations[3].Equals(commands.Forward))
+                        {
+                            if (enumerations[4].Equals(commands.Forward))
+                            {
+                                if (enumerations[5].Equals(commands.Right))
+                                {
+                                    if (enumerations[6].Equals(commands.Forward))
+                                    {
+                                        if (enumerations[7].Equals(commands.Forward))
+                                        {
+                                            if (enumerations[8].Equals(commands.Left))
+                                            {
+                                                if (enumerations[9].Equals(commands.Forward))
+                                                {
+                                                    correct = true;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return correct;
+    }
     public void submit()
     {
         switch (puzzleNumber)
@@ -136,11 +177,15 @@ public class CodingHWScript : MonoBehaviour
             case 1:
                 {
                     outputstring = "";
-                    foreach (string s in commands)
+                    foreach (object s in enumerations)
                     {
-                        outputstring += s;
+                        outputstring += s.ToString();
                     }
-                    if (outputstring == "F, R, F, F, F, R, F, F, L, F, ")
+                    /*if (outputstring == "F, R, F, F, F, R, F, F, L, F, ")
+                    {
+                        SM.codingFinished(1, true);
+                    }*/
+                    if (AnswerCheck(1))
                     {
                         SM.codingFinished(1, true);
                     }
@@ -154,7 +199,7 @@ public class CodingHWScript : MonoBehaviour
                     break;
                     
                 }
-            case 2:
+            /*case 2:
                 {
                     outputstring = "";
                     foreach (string s in commands)
@@ -234,7 +279,7 @@ public class CodingHWScript : MonoBehaviour
                 selectionbtn.SetActive(false);
                 puzzle5.SetActive(false);
                 output.text = "You have finished your coding homework!";
-                break;
+                break;*/
         }
     }
     public void NextPuzzle()
@@ -247,7 +292,7 @@ public class CodingHWScript : MonoBehaviour
                     puzzle2.SetActive(true);
                     for (int x = 0; x < 10; x++)
                     {
-                        commands.SetValue("", x);
+                        enumerations.SetValue(commands.None, x);
                     }
                     index = 1;
                     break;
@@ -258,7 +303,7 @@ public class CodingHWScript : MonoBehaviour
                     puzzle3.SetActive(true);
                     for (int x = 0; x < 10; x++)
                     {
-                        commands.SetValue("", x);
+                        enumerations.SetValue(commands.None, x);
                     }
                     index = 1;
                     break;
@@ -269,7 +314,7 @@ public class CodingHWScript : MonoBehaviour
                     puzzle4.SetActive(true);
                     for (int x = 0; x < 10; x++)
                     {
-                        commands.SetValue("", x);
+                        enumerations.SetValue(commands.None, x);
                     }
                     index = 1;
                     break;
@@ -280,7 +325,7 @@ public class CodingHWScript : MonoBehaviour
                     puzzle5.SetActive(true);
                     for (int x = 0; x < 10; x++)
                     {
-                        commands.SetValue("", x);
+                        enumerations.SetValue(commands.None, x);
                     }
                     index = 1;
                     break;
