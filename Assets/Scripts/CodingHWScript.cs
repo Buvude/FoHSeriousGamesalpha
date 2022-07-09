@@ -9,11 +9,17 @@ public class CodingHWScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        commands = new string[10];   
+        
+        for (int i = 0; i < enumerations.Length; i++)
+        {
+            enumerations[i]=commands.None;
+        }
     }
+    public enum commands { Up, Down, Left, Right, None };
     public Thoughts thou;
     public DistractionCenter DCMain;
-    public string[] commands;
+    //public string[] commands;
+    object[] enumerations = new object[10];
     public int index=1;
     public TextMeshProUGUI output;
     private string outputstring;
