@@ -168,6 +168,146 @@ public class CodingHWScript : MonoBehaviour
                 }
             }
         }
+        else if (QNum == 2)
+        {
+            //TODO add animation?
+            if (enumerations[0].Equals(commands.Forward))
+            {
+                if (enumerations[1].Equals(commands.Forward))
+                {
+                    if (enumerations[2].Equals(commands.Left))
+                    {
+                        if (enumerations[3].Equals(commands.Forward))
+                        {
+                            if (enumerations[4].Equals(commands.Forward))
+                            {
+                                if (enumerations[5].Equals(commands.Right))
+                                {
+                                    if (enumerations[6].Equals(commands.Forward))
+                                    {
+                                        if (enumerations[7].Equals(commands.Right))
+                                        {
+                                            if (enumerations[8].Equals(commands.Forward))
+                                            {
+                                                if (enumerations[9].Equals(commands.Forward))
+                                                {
+                                                    correct = true;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else if (QNum == 3)
+        {
+            //TODO add animation?
+            if (enumerations[0].Equals(commands.Forward))
+            {
+                if (enumerations[1].Equals(commands.Left))
+                {
+                    if (enumerations[2].Equals(commands.Forward))
+                    {
+                        if (enumerations[3].Equals(commands.Left))
+                        {
+                            if (enumerations[4].Equals(commands.Forward))
+                            {
+                                if (enumerations[5].Equals(commands.Forward))
+                                {
+                                    if (enumerations[6].Equals(commands.Left))
+                                    {
+                                        if (enumerations[7].Equals(commands.Forward))
+                                        {
+                                            if (enumerations[8].Equals(commands.Right))
+                                            {
+                                                if (enumerations[9].Equals(commands.Forward))
+                                                {
+                                                    correct = true;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else if (QNum == 4)
+        {
+            //TODO add animation?
+            if (enumerations[0].Equals(commands.Forward))
+            {
+                if (enumerations[1].Equals(commands.Forward))
+                {
+                    if (enumerations[2].Equals(commands.Right))
+                    {
+                        if (enumerations[3].Equals(commands.Forward))
+                        {
+                            if (enumerations[4].Equals(commands.Forward))
+                            {
+                                if (enumerations[5].Equals(commands.Left))
+                                {
+                                    if (enumerations[6].Equals(commands.Forward))
+                                    {
+                                        if (enumerations[7].Equals(commands.Forward))
+                                        {
+                                            if (enumerations[8].Equals(commands.Left))
+                                            {
+                                                if (enumerations[9].Equals(commands.Forward))
+                                                {
+                                                    correct = true;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else if (QNum == 5)
+        {
+            //TODO add animation?
+            if (enumerations[0].Equals(commands.Right))
+            {
+                if (enumerations[1].Equals(commands.Forward))
+                {
+                    if (enumerations[2].Equals(commands.Forward))
+                    {
+                        if (enumerations[3].Equals(commands.Left))
+                        {
+                            if (enumerations[4].Equals(commands.Forward))
+                            {
+                                if (enumerations[5].Equals(commands.Forward))
+                                {
+                                    if (enumerations[6].Equals(commands.Left))
+                                    {
+                                        if (enumerations[7].Equals(commands.Forward))
+                                        {
+                                            if (enumerations[8].Equals(commands.Forward))
+                                            {
+                                                if (enumerations[9].Equals(commands.Forward))
+                                                {
+                                                    correct = true;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         return correct;
     }
     public void submit()
@@ -183,7 +323,7 @@ public class CodingHWScript : MonoBehaviour
                     }
                     /*if (outputstring == "F, R, F, F, F, R, F, F, L, F, ")
                     {
-                        SM.codingFinished(1, true);
+                        SM.codingFinished(1, true); these are the old way of checking the answers... and they didn't work anyways
                     }*/
                     if (AnswerCheck(1))
                     {
@@ -197,16 +337,17 @@ public class CodingHWScript : MonoBehaviour
                     thou.firstkTimeCode = false;
                     NextPuzzle();
                     break;
-                    
+
                 }
-            /*case 2:
+            case 2:
                 {
                     outputstring = "";
-                    foreach (string s in commands)
+                    foreach (object s in enumerations)
                     {
-                        outputstring += s;
+                        outputstring += s.ToString();
                     }
-                    if (outputstring == "F, F, L, F, F, R, F, R, F, F, ")
+
+                    if (AnswerCheck(2))
                     {
                         SM.codingFinished(2, true);
                     }
@@ -217,15 +358,20 @@ public class CodingHWScript : MonoBehaviour
                     puzzleNumber++;
                     NextPuzzle();
                     break;
+                    /*if (outputstring == "F, F, L, F, F, R, F, R, F, F, ")
+                    {
+                        SM.codingFinished(2, true);
+                    }*/
                 }
             case 3:
                 {
                     outputstring = "";
-                    foreach (string s in commands)
+                    foreach (object s in enumerations)
                     {
-                        outputstring += s;
+                        outputstring += s.ToString();
                     }
-                    if (outputstring == "F, L, F, L, F, F, L, F, R, F, ")
+
+                    if (AnswerCheck(3))
                     {
                         SM.codingFinished(3, true);
                     }
@@ -236,15 +382,21 @@ public class CodingHWScript : MonoBehaviour
                     puzzleNumber++;
                     NextPuzzle();
                     break;
+                    /* if (outputstring == "F, L, F, L, F, F, L, F, R, F, ")
+                     {
+                         SM.codingFinished(3, true);
+                     }*/
+
                 }
             case 4:
                 {
                     outputstring = "";
-                    foreach (string s in commands)
+                    foreach (object s in enumerations)
                     {
-                        outputstring += s;
+                        outputstring += s.ToString();
                     }
-                    if (outputstring == "F, F, R, F, F, L, F, F, L, F, ")
+
+                    if (AnswerCheck(4))
                     {
                         SM.codingFinished(4, true);
                     }
@@ -255,15 +407,21 @@ public class CodingHWScript : MonoBehaviour
                     puzzleNumber++;
                     NextPuzzle();
                     break;
+                    /* if (outputstring == "F, F, R, F, F, L, F, F, L, F, ")
+                     {
+                         SM.codingFinished(4, true);
+                     }*/
+
                 }
             case 5:
                 {
                     outputstring = "";
-                    foreach (string s in commands)
+                    foreach (object s in enumerations)
                     {
-                        outputstring += s;
+                        outputstring += s.ToString();
                     }
-                    if (outputstring == "R, F, F, L, F, F, L, F, F, F, ")
+
+                    if (AnswerCheck(5))
                     {
                         SM.codingFinished(5, true);
                     }
@@ -274,12 +432,17 @@ public class CodingHWScript : MonoBehaviour
                     puzzleNumber++;
                     NextPuzzle();
                     break;
+                    /*if (outputstring == "R, F, F, L, F, F, L, F, F, F, ")
+                    {
+                        SM.codingFinished(5, true);
+                    }*/
+
                 }
             default:
                 selectionbtn.SetActive(false);
                 puzzle5.SetActive(false);
                 output.text = "You have finished your coding homework!";
-                break;*/
+                break;
         }
     }
     public void NextPuzzle()
