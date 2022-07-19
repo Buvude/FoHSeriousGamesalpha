@@ -23,7 +23,7 @@ public class HistoryHWScript : MonoBehaviour
         answerB.text = "paragraph 2";
         answerC.text = "paragraph 3";
         answerD.text = " The answer is not in the text";
-        question.text = "What was the primary cause of the 1541 Cotton Candy Wars?";
+        question.text = "In which paragraph can you find the primary cause of the 1541 Cotton Candy Wars?";
         //q3Correct = Random.Range(1,5);
 
     }
