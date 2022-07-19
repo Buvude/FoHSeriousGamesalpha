@@ -14,6 +14,11 @@ public class CodingHWScript : MonoBehaviour
         {
             enumerations[i]=commands.None;
         }
+        foreach (object s in enumerations)
+        {
+            outputstring += s.ToString() + "\n";
+        }
+        output.text = outputstring;
     }
     public enum commands { Forward, Back, Left, Right, None };
     public Thoughts thou;
@@ -457,7 +462,13 @@ public class CodingHWScript : MonoBehaviour
                     {
                         enumerations.SetValue(commands.None, x);
                     }
-                    index = 1;
+                    index = 0;
+                    outputstring = "";
+                    foreach (object s in enumerations)
+                    {
+                        outputstring += s.ToString() + "\n";
+                    }
+                    output.text = outputstring;
                     break;
                 }
             case 3:
@@ -468,7 +479,13 @@ public class CodingHWScript : MonoBehaviour
                     {
                         enumerations.SetValue(commands.None, x);
                     }
-                    index = 1;
+                    index = 0;
+                    outputstring = "";
+                    foreach (object s in enumerations)
+                    {
+                        outputstring += s.ToString() + "\n";
+                    }
+                    output.text = outputstring;
                     break;
                 }
             case 4:
@@ -479,7 +496,13 @@ public class CodingHWScript : MonoBehaviour
                     {
                         enumerations.SetValue(commands.None, x);
                     }
-                    index = 1;
+                    index = 0;
+                    outputstring = "";
+                    foreach (object s in enumerations)
+                    {
+                        outputstring += s.ToString() + "\n";
+                    }
+                    output.text = outputstring;
                     break;
                 }
             case 5:
@@ -490,10 +513,17 @@ public class CodingHWScript : MonoBehaviour
                     {
                         enumerations.SetValue(commands.None, x);
                     }
-                    index = 1;
+                    index = 0;
+                    outputstring = "";
+                    foreach (object s in enumerations)
+                    {
+                        outputstring += s.ToString() + "\n";
+                    }
+                    output.text = outputstring;
                     break;
                 }
             default:
+                submit();
                 break;
         }
     }
